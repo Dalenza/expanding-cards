@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 780px;
+}
+
+.container__card {
+  position: relative;
+  height: 80vh;
+  flex: 1;
+  margin: 1%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 80px;
+  transition: 0.5s ease-out;
+  cursor: pointer;
+}
+
+.container__card h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  text-transform: capitalize;
+  opacity: 0;
+}
+
+.container__card.active {
+  flex: 5;
+  flex-shrink: 0;
+}
+
+.container__card.active h3 {
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0.5s;
+}
+
+.forest {
+  background-image: url(https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+
+.beach {
+  background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80);
+}
+
+.city {
+  background-image: url(https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+}
+
+.mountains {
+  background-image: url(https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+.bridge {
+  background-image: url(https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container__card {
+    width: 100%;
+    flex-basis: 100px;
+    transition: flex-basis 0.5s ease-in-out;
+  }
+
+  .container__card.active {
+    width: 100%;
+    flex-basis: 500px;
+    flex-shrink: 0;
+  }
+
+  .container__card h3 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
